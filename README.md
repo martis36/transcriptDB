@@ -1,5 +1,4 @@
 # Audio-Transcript Database Implementation
-github-classroom-group-hello-world-group-3 created by GitHub Classroom
 
 CSC 315-01 - Database Systems  
 Group 3  
