@@ -25,7 +25,16 @@ The objective of our project is to create and provide a more efficient and user 
 The audio-transcript files would be sorted and arranged in a neat, elegant user friendly user interface and would be tagged or labeled with topics, names, dates, and other relevant information so they would be able to be searched for more easily, made easy through tagging the files with relevant information. There would be a search bar at the top of the page so users could easily search for their desired topic or a specific year. If selected, the user would be taken to a different page where they could listen to the audio file and have the option to view the transcript. When viewing the transcript, the user would see the entire transcript at once, maybe with the current part highlighted. On the main page there would be a link to the transcript for each audio file in case the user would rather only view the transcript. There would be some feature on the main page which would be a submission box for new audio files, records, or suggestions. For example, if someone found an error in the transcript or wanted to make a suggestion for improvement or a new submission to be transcribed.
 
 ### Installation
-WIP 
+
+- Download the contents of our repo. Within the file CAB DOCS is the file Database Documents where you will find the needed files.
+- With psql installed, run these commands to change your user permissions to super user:
+		sudo -u postgres psql
+		alter role <your username> superuser
+This allows you to use COPY in the CopyCSV.sql file.
+- In the CopyCSV file, you may need to change the path specified for the FROM command. Also in the run file, you may need to change the path to each file.
+- Once your permissions and paths are set, create your database by typing the following command:
+		./run.sh
+This is a script that completes the tasks of creating tables, as well as populating them with data. The script leaves you within the psql database and from there, you are able to begin using psql queries to do whatever you may need to do with the data!
 
 ### Usage
 Wip
