@@ -31,10 +31,11 @@ The audio-transcript files would be sorted and arranged in a neat, elegant user 
 - 		sudo -u postgres psql
 - 		alter role <your username> superuser
 This allows you to use COPY in the CopyCSV.sql file.
-- In the CopyCSV file, you may need to change the path specified for the FROM command. Also in the run file, you may need to change the path to each file.
+- In the CopyCSV file, you may need to change the path specified for the FROM command. Also, in the run.sh file, you may need to change the path to each .sql file.
 - Once your permissions and paths are set, create your database by typing the following command:
 - 		./run.sh
 This is a script that completes the tasks of creating tables, as well as populating them with data. The script leaves you within the psql database and from there, you are able to begin using psql queries to do whatever you may need to do with the data!
+
 
 ### Usage
 Wip
