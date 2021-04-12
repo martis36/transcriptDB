@@ -5,7 +5,7 @@ Group 3
 Aly Maahs, Jared Schmidt, Kyla Ramos, Lalima Bhola, Summer Martin  
 Spring 2021
 
-### Please see Installation Instructions blow or see the Installation Instruction document before attempting to run the database files. 
+### Please see Installation Instructions blow, Installation Instructions document, or the Stage 5a wiki page before attempting to run the database files. 
 File paths in some documents may need to be changed.
 
 ## Overview
