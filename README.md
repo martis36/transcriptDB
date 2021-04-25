@@ -31,7 +31,7 @@ The audio-transcript files would be sorted and arranged in a neat, elegant user 
 
 - Download the contents of our repo. Within the file CAB DOCS is the file Database Documents where you will find the needed files.
 - With psql installed, run these commands to change your user permissions to super user:
-- 		sudo -u postgres psql
+-		sudo -u postgres psql
 - 		alter role <your username> superuser
 This allows you to use COPY in the CopyCSV.sql file.
 - In the CopyCSV file, you may need to change the path specified for the FROM command. Also, in the run.sh file, you may need to change the path to each .sql file.
@@ -40,6 +40,28 @@ This allows you to use COPY in the CopyCSV.sql file.
 - 		./run.sh
 This is a script that completes the tasks of creating tables, as well as populating them with data. The script leaves you within the psql database and from there, you are able to begin using psql queries to do whatever you may need to do with the data!
 
+
+
+
+To run and access the web interface, run the following commands
+-		sudo apt update
+- 		sudo apt install python3-pip
+-	install pyscopg2
+- 		pip3 install psycopg2-binary
+- install flask
+- 		pip3 install flask
+
+- logout, then login again to inherit new shell environment
+
+- then browse to http://127.0.0.1:5000/
+
+To drop the database. Run the command  
+`\i drop.sql`  
+in your psql database to drop all the views and tables. Enter  
+`\q`  
+to exit your database and enter  
+`dropdb TrentonianaDB`  
+to drop the entire database.
 
 ### Usage
 Wip
