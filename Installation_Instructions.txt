@@ -1,6 +1,6 @@
 INSTALLATION INSTRUCTIONS
 
-Download the contents of our repo. Within the file CAB Docs are the needed files. Please see our Stage 5a wiki page for more information about each file.
+Download the contents of our repo. Within the file CAB Docs are the needed files. It is best if all the files and folders within CAB Docs are moved into your main Douments Directory on your home system. Please see our Stage 5a wiki page for more information about each file.
 
 With psql installed, run these commands to change your user permissions to super user:
 	sudo -u postgres psql
@@ -10,7 +10,34 @@ In the CopyCSV file, you may need to change the path specified for the FROM comm
 Once your permissions and paths are set, create your database by typing the following commands:
 	chmod +x run.sh
 	./run.sh
-This is a script that completes the tasks of creating tables, as well as populating them with data. The script leaves you within the psql database and from there, you are able to begin using psql queries to do whatever you may need to do with the data!
+This is a script that completes the tasks of creating tables, as well as populating them with data. The script leaves you outside of the psql database and from there, you are able to run our UI to start interacting with the database. 
+
+To run set up and load our UI, please refer to the foloowing instrucitons which can also be found in our app.py file:
+
+# set the postgreSQL password for user 'lion'
+	sudo -u postgres psql
+	ALTER USER lion PASSWORD 'lion';
+	\q
+
+# install pip for Python 3
+	sudo apt update
+	sudo apt install python3-pip
+
+# install psycopg2
+	pip3 install psycopg2-binary
+
+# install flask
+	pip3 install flask
+
+# logout, then login again to inherit new shell environment
+
+run the following command:
+	chmod +x run-web.sh
+	./run-web.sh
+
+then browse to http://127.0.0.1:5000/
+
+
 
 To drop the database. Run the command:
 	\i drop.sql
@@ -19,3 +46,5 @@ in your psql database to drop all the views and tables. Enter:
 to exit your database and enter:
 	dropdb TrentonianaDB
 to drop the entire database.
+
+IF YOU EXPERIENCE ERRORS: There may be some path to another file they may be incorrect because of the directory it is in or because the file cannot be found. It is best to check that the path specified to each file is up to date and correct.

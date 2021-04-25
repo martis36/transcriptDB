@@ -1,0 +1,42 @@
+<!--about us page-->
+<!--implementation by Kyla Ramos and Lalima Bhola-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <!-- <link rel="icon" href="tab_image.jpeg">-->
+    <link src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+
+    <!--url for static references the location of the static directory-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
+
+        <!--navigation bar setup-->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('search') }}">Search Transcripts</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
+                <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About Us</h1>
+        <p>We are an amazing and wonderful group of students from TCNJ who developed this web application for a project. The objective of our project is to create and provide a more efficient and user friendly system for searching and finding audio files on the topics the user is looking for. It is also our goal to combine the audio field and the transcripts so they are both accessible to the public and have the ability to view the transcript that corresponds to the audio file while the audio is playing. We want to provide a user friendly interface for searching, and viewing these files. Providing an straightforward way to interact with these files and a system that would allow for public users to submit new files to be transcribed would encourage interaction between the user and those behind the scenes to collaborate and improve upon existing systems. Better user interaction makes the user feel like their suggestions are valued and their interaction with our system is important. We also want those with higher access to the database to be able to improve and make changes, like adding relevant tags, information and new files, to the system more easily.</p>
+    </main>
+</body>
+
+</html>

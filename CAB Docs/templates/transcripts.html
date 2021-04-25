@@ -1,0 +1,69 @@
+<!--transcripts page-->
+<!--base code taken from index and about html files and changes made by Summer Martin-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trentoniana Transcripts</title>
+
+    <!--url for static references the location of the static directory-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <main>
+        <header>
+            <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
+
+            <!--navigation bar setup-->
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="{{ url_for('search') }}">Search Transcripts</a></li>
+                    <li><a href="{{ url_for('about') }}">About Us</a></li>
+                    <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
+                    <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <!--setup of buttons to view transcripts-->
+        <div class="center">
+            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Dr. Paul Loser.html') }}">View Transcript for Dr. Paul Loser</a></li>
+        </div>
+
+        <div class="center">
+            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Joel Millner.html') }}">View Transcript for Joel Millner</a></li>
+        </div>
+
+        <div class="center">
+            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Rosenthal, Minerva.html') }}">View Transcript for Rosenthal, Minerva</a></li>
+        </div>
+
+        <div class="center">
+            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Joe & Ida Klatzkin.html') }}">View Transcript for Joe & Ida Klatzkin</a></li>
+        </div>
+
+        <div class="center">
+            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/JHS 55, Samuel Rudner.html') }}">View Transcript for Samuel Rudner</a></li>
+        </div>
+
+        <p>
+
+        </p>
+
+        <div class="center">
+            <li class="center"><a class="searchbutton" href="{{ url_for('search') }}">Back to Search</a></li>
+        </div>
+    </main>
+</body>
+
+</html>

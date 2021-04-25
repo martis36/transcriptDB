@@ -1,0 +1,81 @@
+<!--suggestions page-->
+<!--implementation by Kyla Ramos and Lalima Bhola and Jared Schmidt-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestions</title>
+    <!-- <link rel="icon" href="tab_image.jpeg">-->
+
+    <!--url for static references the location of the static directory-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script src="{{ url_for('static', filename='scripts/suggestconfirm.js')}}"></script>
+    <header>
+        <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
+
+        <!--navigation bar setup-->
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('search') }}">Search Transcripts</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
+                <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--setup of suggestions form-->
+        <section class="contact_form">
+            <h1>Suggestions</h1>
+            <div class="container">
+                <form action="/suggest-edit" method="POST" onsubmit="return suggestconfirm(this);">
+
+                    <div class="row">
+                        <div class="form_names">
+                            <label for="fname">UserID</label>
+                        </div>
+                        <div class="form_names2">
+                            <input type="text" id="fname" name="firstname" placeholder="Your UserID" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form_names">
+                            <label for="lname">Relevant Audio_File Name </label>
+                        </div>
+                        <div class="form_names2">
+                            <input type="text" id="lname" name="lastname" placeholder="Name of File being addressed. Not Required.">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form_names">
+                            <label for="subject">Message</label>
+                        </div>
+                        <div class="form_names2">
+                            <textarea id="subject" name="message" required placeholder="Type your suggestion..." style="height:10rem"></textarea>
+                        </div>
+                    </div>
+
+                    <!--submit and reset buttons-->
+                    <div class="row">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
