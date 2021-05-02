@@ -1,6 +1,6 @@
 INSTALLATION INSTRUCTIONS
 
-Download the contents of our repo. Within the file CAB Docs are the needed files. It is best if all the files and folders within CAB Docs are moved into your main Douments Directory on your home system. Please see our wiki page for more information about each file.
+Download the contents of our repo. Within the file Code are the needed files. It is best if all the files and folders within Code are moved into your main Douments Directory on your home system. Please see our wiki page for more information about each file.
 
 With psql installed, run these commands to change your user permissions to super user:
 	sudo -u postgres psql

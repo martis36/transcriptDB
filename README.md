@@ -29,8 +29,8 @@ The audio-transcript files would be sorted and arranged in a neat, elegant user 
 
 ### Installation
 
-- Download the contents of our repo. Within the file CAB DOCS is the file Database Documents where you will find the needed files.
-- With psql installed, run these commands to change your user permissions to super user:
+- Download the contents of our repo. Within the file Code is where you will find the needed files it is best to move these files into your main Documents folder on your local machine.
+- With psql installed, run these commands in the terminal to change your user permissions to super user:
 -		sudo -u postgres psql
 - 		alter role <your username> superuser
 This allows you to use COPY in the CopyCSV.sql file.
@@ -39,9 +39,6 @@ This allows you to use COPY in the CopyCSV.sql file.
 -		chmod +x run.sh
 - 		./run.sh
 This is a script that completes the tasks of creating tables, as well as populating them with data. The script leaves you within the psql database and from there, you are able to begin using psql queries to do whatever you may need to do with the data!
-
-
-
 
 To run and access the web interface, run the following commands
 -		sudo apt update
