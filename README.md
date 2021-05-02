@@ -5,6 +5,8 @@ Group 3
 Aly Maahs, Jared Schmidt, Kyla Ramos, Lalima Bhola, Summer Martin  
 Spring 2021
 
+![TrentonianaTranscripts Logo](https://raw.githubusercontent.com/TCNJ-degoodj/stage-v-group-3/main/Code/static/img/logo2.png?token=ANWWE2OPVOLY2XR255MW5MDATBK2Q)
+
 ### Please see Installation Instructions blow, Installation Instructions document, or the Stage 5a wiki page before attempting to run the database files. 
 File paths in some documents may need to be changed.
 
