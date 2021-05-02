@@ -68,7 +68,19 @@ to exit your database and enter
 to drop the entire database.
 
 ### Usage
-Wip
+Use the navigation menu on the website to access our different pages.  
+* Home Page -> Contains some brief information about the purpose of the website.
+* About Page -> Contains information about our group, and what we have done with our project.
+* Suggestion Page -> A page where a user can fill out a form to send any suggestion in.
+* A link to Trentoniana's main website
+* Search Page -> A page with simple to use toggleable filters to search for any information. PSQL is being used in the back end, but the front end hides that from a regular user.
+* Advanced Search Page -> A page where a user with knowledge of PSQL can search for any information using PSQL commands in a textbox search field.
+* Main Transcript page -> A page that holds links to every transcript's specific webpage in the database.
+* Transcript Page -> Each transcript has been given it's own page as well, that contains the links to the audio file associated with it and has the transcription of the audio written on the page so a user can follow along while they listen.
+* Comment Page -> A page where a user can fill out a form to comment on any specific transcript.
+* Sign In Page -> Used for an admin or moderator to sign in and access special privileges.
+* Admin Page -> A page dedicated with tools for an admin of the DB to use.
+* Moderator Page -> A page dedicated with tools for a moderator of the DB to use.
 
 ### Credits
 Authored by Aly Maahs, Jared Schmidt, Summer Martin, Kyla Ramos, Lalima Bhola
