@@ -1,4 +1,4 @@
-<!--suggestions page-->
+<!--comment page-->
 <!--implementation by the entire group-->
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suggestions</title>
+    <title>Comment</title>
 
     <!--url for static references the location of the static directory-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
@@ -24,7 +24,7 @@
         <!--navigation bar setup-->
         <nav>
             <ul>
-                <!--header and navegation bar with drop down search feature-->
+            <!--header and navegation bar with drop down search feature-->
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <div class="dropdown">
                         <li class="dropbtn">Search</li>
@@ -45,27 +45,27 @@
     <main>
         <!--setup of suggestions form-->
         <section class="contact_form">
-            <h1>Suggestions</h1>
-            <h2>See something wrong? Think a change should be made? Have a concern about something on our website? Send us a message and let us know! We will review your suggestion as soon as we can. <h2>
+            <h1>Make a Comment</h1>
+            <h2>Have something to say about one of the audio files you viewed? Please leave your user ID and the name of the file and tell us what's on your mind!</h2>
             <div class="container">
-                <form autocomplete="off" action="/suggest-edit" method="POST" onsubmit="return suggestconfirm(this);">
+                <form autocomplete="off" action="/make-comment" method="POST" onsubmit="return suggestconfirm(this);">
 
                     <div class="row">
                         <div class="form_names">
-                            <label for="fname">UserID</label>
+                            <label for="uname">UserID</label>
                         </div>
                         <div class="form_names2">
-                            <input type="text" id="fname" name="firstname" placeholder="Your UserID" required>
+                            <input type="text" id="uname" name="uname" placeholder="Your UserID" required>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="form_names">
-                            <label for="lname">Relevant Audio_File Name </label>
+                            <label for="file">Relevant Audio_File Name </label>
                         </div>
                         <div class="form_names2">
-                            <input type="text" list="one" id="lname" name="lastname" placeholder="Name of File being addressed.">
-                            <datalist id="one">
+                            <input type="text" list="two" id="filename" name="filename" required placeholder="Name of File being addressed.">
+                            <datalist id="two">
                                 <option value="Dr. Paul Loser">
                                 <option value="Joel Millner">
                                 <option value="Rosenthal, Minerva">
@@ -77,10 +77,10 @@
 
                     <div class="row">
                         <div class="form_names">
-                            <label for="subject">Message</label>
+                            <label for="subject">Comment</label>
                         </div>
                         <div class="form_names2">
-                            <textarea id="subject" name="message" required placeholder="Type your suggestion..." style="height:10rem"></textarea>
+                            <textarea id="subject" name="comment" required placeholder="Type your comment..." style="height:10rem"></textarea>
                         </div>
                     </div>
 

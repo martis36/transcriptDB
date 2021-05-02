@@ -1,13 +1,13 @@
 INSTALLATION INSTRUCTIONS
 
-Download the contents of our repo. Within the file CAB Docs are the needed files. It is best if all the files and folders within CAB Docs are moved into your main Douments Directory on your home system. Please see our Stage 5a wiki page for more information about each file.
+Download the contents of our repo. Within the file CAB Docs are the needed files. It is best if all the files and folders within CAB Docs are moved into your main Douments Directory on your home system. Please see our wiki page for more information about each file.
 
 With psql installed, run these commands to change your user permissions to super user:
 	sudo -u postgres psql
 	alter role <your username> superuser
 This allows you to use COPY in the CopyCSV.sql file.
 In the CopyCSV file, you may need to change the path specified for the FROM command. Also, in the run.sh file, you may need to change the path to each .sql file.
-Once your permissions and paths are set, create your database by typing the following commands:
+Once your permissions and paths are set, create your database by typing the following commands (make sure you have cd into your Documents folder):
 	chmod +x run.sh
 	./run.sh
 This is a script that completes the tasks of creating tables, as well as populating them with data. The script leaves you outside of the psql database and from there, you are able to run our UI to start interacting with the database. 
@@ -31,11 +31,14 @@ To run set up and load our UI, please refer to the foloowing instrucitons which 
 
 # logout, then login again to inherit new shell environment
 
-run the following command:
+
+
+run the following command in your terminal (make sure you have cd into your Documents folder):
 	chmod +x run-web.sh
 	./run-web.sh
 
 then browse to http://127.0.0.1:5000/
+
 
 
 

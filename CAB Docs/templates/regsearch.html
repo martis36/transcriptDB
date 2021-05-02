@@ -1,0 +1,188 @@
+<!--regular search page-->
+<!--implementation by Summer Martin, extra formatting editions by Kyla Ramos-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    
+    <!--url for static references the location of the static directory-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <!--gets the website title image-->
+        <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
+
+        <!--navigation bar setup-->
+        <nav>
+            <ul>
+            <!--header and navegation bar with drop down search feature-->
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <div class="dropdown">
+                        <li class="dropbtn">Search</li>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('regsearch') }}">Search</a>
+                            <a href="{{ url_for('search') }}">Advanced Search</a>
+                            <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
+                        </div>
+                    </div>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
+                <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+                <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+       <h1>File Search</h1>
+          <div><p3>To view a transcript, please search for an audio file and see "View Transcripts" at the bottom of the results page. Or, go to the search tab in the navegation bar and select transcripts from the drop down menu.</p3></div>
+
+        <form autocomplete="off" action="/make-search" method="POST">
+            <h3>View All Transcripts</h3>
+           <div>
+                <input type="radio" id="all" name="searchby" value="all" checked>
+                <label2 for="all">View all files</label2>
+            </div>            
+            
+            <h3>Search by Name</h3>
+
+            <div>
+                <input type="radio" id="spec" name="searchby" value="spec">
+                <label2 for="spec">Search for file by name:</label2>
+            </div>
+            <div class="form_names3">
+                 <input type="text" list="names" id="name" name="entry1" placeholder="Please enter a file name">
+                 <datalist id="names">
+                    <option value="Dr. Paul Loser">
+                    <option value="Joel Millner">
+                    <option value="Rosenthal, Minerva">
+                    <option value="JHS 55 Samuel Rudner">
+                    <option value="Joe & Ida Klatzkin">
+                </datalist>
+            </div>
+
+            <h3>Search by Date</h3>
+            <div>
+                <input type="radio" id="year" name="searchby" value="year">
+                <label2 for="year">Search for file by date range:</label2>
+            </div>
+            <div class="row"><div class="form_names3">
+                 <input type="text" id="dname" name="date1" placeholder="Please enter a year with a smaller number ex: 1940">
+                 <input type="text" id="dname" name="date2" placeholder="Please enter a year with a larger number ex: 1999">
+            </div></div>
+            
+            <h3>Search by Tags</h3>
+            <div>
+                <input type="radio" id="tags" name="searchby" value="tags">
+                <label2 for="tags">View all Tags</label2>
+            </div>
+            <div>
+                <input type="radio" id="tag" name="searchby" value="tag">
+                <label2 for="tag">Search for file by tag:</label2>
+            </div>
+            <div class="form_names3">
+                 <input type="text" list="t" id="tagname" name="entry2" placeholder="Please enter a tag">
+                <datalist id="t">                 
+                    <option value="Trenton">
+                    <option value="History">
+                    <option value="Culture">
+                    <option value="Photograph">
+                    <option value="New Jersey">
+                    <option value="Ewing">
+                    <option value="Yearbook">
+                    <option value="School">
+                    <option value="Church">
+                    <option value="Club">
+                    <option value="Library">
+                    <option value="Interview">                   
+                    <option value="Old Trenton">
+                    <option value="Neighborhood">
+                    <option value="Sport">
+                    <option value="Game">                    
+                    <option value="Shooting">
+                    <option value="Safety">
+                    <option value="Crime">
+                    <option value="Kids">
+                    <option value="Art">
+                    <option value="Music">
+                    <option value="Money">
+                    <option value="Law">
+                    <option value="Rules">
+                    <option value="Life">
+                    <option value="Childhood">
+                    <option value="Social">
+                    <option value="Society">
+                    <option value="Politics">
+                    <option value="Economy">
+                    <option value="TCNJ">
+                    <option value="College">
+                    <option value="Museum">                   
+                    <option value="House">
+                    <option value="Immigration">
+                    <option value="Jewish">
+                    <option value="Liquor">                    
+                    <option value="Lawyer">
+                    <option value="Family">
+                    <option value="Business">
+                    <option value="Philadelphia">
+                    <option value="Immigrant">
+                    <option value="Europe">
+                    <option value="Development">
+                    <option value="Youth">
+                    <option value="Truck">
+                    <option value="Improve">
+               </datalist> 
+            </div>         
+            <h3>Search by Like or View Count</h3>
+            <div class="row">
+                <input type="radio" id="like" name="searchby" value="like">
+                <label2 for="like">Like Count</label2>
+                <input type="radio" id="view" name="searchby" value="view" >
+                <label2 for="view">View Count</label2>
+            </div>
+            <div2>
+                <input type="radio" id="less" name="range" value="less">
+                <label3 for="less">Less than</label2>
+                <input type="radio" id="great" name="range" value="great" checked>
+                <label3 for="great">Greater than</label2>                
+            </div2>
+            <div class="form_names3">
+                 <input type="text" id="number" name="number" placeholder="Please enter a numerical value">
+            </div>
+            
+            <h3>Search by Comments</h3>
+            <div>
+                <input type="radio" id="comments" name="searchby" value="comments" >
+                <label2 for="comments">View all comments</label2>
+            </div>
+            <div>
+                <input type="radio" id="filecomment" name="searchby" value="filecomment" >
+                <label2 for="filecomment">View all comments for a file:</label2>
+            </div>
+            <div class="form_names3">
+                 <input type="text" list="com" id="comname" name="entry3" placeholder="Please enter a file name">
+                 <datalist id="com">
+                    <option value="Dr. Paul Loser">
+                    <option value="Joel Millner">
+                    <option value="Rosenthal, Minerva">
+                    <option value="JHS 55 Samuel Rudner">
+                    <option value="Joe & Ida Klatzkin">
+                </datalist>
+            </div>                     
+            <div class="row">
+                <input type="Submit" value="Search">
+                <input type="Reset" value="Reset">
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

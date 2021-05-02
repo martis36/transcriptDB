@@ -1,5 +1,5 @@
 <!--transcripts page-->
-<!--base code taken from index and about html files and changes made by Summer Martin-->
+<!--base code taken from index and about html files and additional implemetation made by Summer Martin-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trentoniana Transcripts</title>
+    <title>Transcripts</title>
 
     <!--url for static references the location of the static directory-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
@@ -20,48 +20,60 @@
 <body>
     <main>
         <header>
+        <!--gets the website title image-->
             <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
 
             <!--navigation bar setup-->
             <nav>
                 <ul>
+                    <!--header and navegation bar with drop down search feature-->
                     <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('search') }}">Search Transcripts</a></li>
+                    <div class="dropdown">
+                        <li class="dropbtn">Search</li>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('regsearch') }}">Search</a>
+                            <a href="{{ url_for('search') }}">Advanced Search</a>
+                            <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
+                        </div>
+                    </div>
                     <li><a href="{{ url_for('about') }}">About Us</a></li>
                     <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
                     <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+                    <li><a href="{{ url_for('signin') }}">Sign In</a></li>
                 </ul>
             </nav>
         </header>
 
 
         <!--setup of buttons to view transcripts-->
+        <form action="/view" method="POST">
         <div class="center">
-            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Dr. Paul Loser.html') }}">View Transcript for Dr. Paul Loser</a></li>
+            <button type="view" name="view" value= loser>View Transcript for Dr. Paul Loser</button>
+        </div>
+        
+        <div class="center">
+            <button type="view" name="view" value= joel>View Transcript for Joel Millner</button>
+        </div>
+        
+        <div class="center">
+            <button type="view" name="view" value= rose>View Transcript for Rosenthal, Minerva</button>
         </div>
 
         <div class="center">
-            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Joel Millner.html') }}">View Transcript for Joel Millner</a></li>
+            <button type="view" name="view" value= joeida>View Transcript for Joe & Ida Klatzkin</button>
         </div>
 
         <div class="center">
-            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Rosenthal, Minerva.html') }}">View Transcript for Rosenthal, Minerva</a></li>
+            <button type="view" name="view" value= sam>View Transcript for Samuel Rudner</button>
         </div>
-
-        <div class="center">
-            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/Joe & Ida Klatzkin.html') }}">View Transcript for Joe & Ida Klatzkin</a></li>
-        </div>
-
-        <div class="center">
-            <li class="center"><a class="tranbutton" href="{{ url_for('static', filename='transcripts/JHS 55, Samuel Rudner.html') }}">View Transcript for Samuel Rudner</a></li>
-        </div>
+        </form>
 
         <p>
 
         </p>
 
         <div class="center">
-            <li class="center"><a class="searchbutton" href="{{ url_for('search') }}">Back to Search</a></li>
+            <li class="center"><a class="searchbutton" href="{{ url_for('regsearch') }}">Back to Search</a></li>
         </div>
     </main>
 </body>

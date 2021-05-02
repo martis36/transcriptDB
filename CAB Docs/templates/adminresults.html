@@ -1,4 +1,4 @@
-<!--advanced search page-->
+<!--results page-->
 <!--created using base code from Professor DeGood with changes and additions made by entire group-->
 
 <!DOCTYPE html>
@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Search</title>
+    <title>Result</title>
 
     <!--url for static references the location of the static directory-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
@@ -25,14 +25,14 @@
             <ul>
             <!--header and navegation bar with drop down search feature-->
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <div class="dropdown">
-                    <li class="dropbtn">Search</li>
-                    <div class="dropdown-content">
-                        <a href="{{ url_for('regsearch') }}">Search</a>
-                        <a href="{{ url_for('search') }}">Advanced Search</a>
-                        <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
+                    <div class="dropdown">
+                        <li class="dropbtn">Search</li>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('regsearch') }}">Search</a>
+                            <a href="{{ url_for('search') }}">Advanced Search</a>
+                            <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
+                        </div>
                     </div>
-                </div>
                 <li><a href="{{ url_for('about') }}">About Us</a></li>
                 <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
                 <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
@@ -43,18 +43,16 @@
 
     <main>
 
-        <form action="/form-handler" method="POST">
-            <div>
-                <p> Search using a postgreSQL SELECT command: </p>
-                <p> To view transcripts, please search for an audio file(s) and see "View Transcripts" at the bottom of the results page. Or, go to the search tab in the navegation bar and select transcripts from the drop down. </p>
-                <div><p>If you are unfamiliar with psql queries please use the main search page here: </p></div>
-                <!--this is to take the user to the regular search page-->
-                <li class="right"><a class="cbutton" href="{{ url_for('regsearch') }}">Basic Search</a></li>
-                <p></p>
-                <input type="text" name="query">
-            </div>
-            <input type="submit" value="Submit">
-        </form>
+        <table>
+            <!-- nested for loops in jinja template -->
+            {%for row in rows%}
+            <tr>
+                {%for col in row%}
+                <td>{{col}}</td>
+                {%endfor%}
+            </tr>
+            {%endfor%}
+        </table>
     </main>
 </body>
 

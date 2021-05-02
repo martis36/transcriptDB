@@ -8,7 +8,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trentoniana Transcripts</title>
+    <title>ERROR</title>
+
+    <!--url for static references the location of the static directory-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
@@ -16,27 +18,35 @@
 </head>
 
 <body>
-    <!--link javascript file-->
-    <script src="script.js"></script>
     <main>
         <header>
+        <!--gets the website title image-->
             <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
             <nav>
                 <ul>
+                <!--header and navegation bar with drop down search feature-->
                     <li><a href="{{ url_for('index') }}">Home</a></li>                    
-                    <li><a href="{{ url_for('search') }}">Search Transcripts</a></li>
+                    <div class="dropdown">
+                        <li class="dropbtn">Search</li>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('regsearch') }}">Search</a>
+                            <a href="{{ url_for('search') }}">Advanced Search</a>
+                            <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
+                        </div>
+                    </div>
                     <li><a href="{{ url_for('about') }}">About Us</a></li>
                     <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
                     <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+                    <li><a href="{{ url_for('signin') }}">Sign In</a></li>
                 </ul>
             </nav>
         </header>
         <h1>This is an invalid search.</h1>
         
-        <p> We apologize for any inconvenience. Please return to the search page and try again!</p>
+        <p> You have either entered an incorrect search or you are trying to access a part of the website that you, as a guest user, do not have access to. We apologize for any inconvenience. Please return to the search page and try again!</p>
         
       <div class="center">
-        <li class="center"><a class="searchbutton" href="{{ url_for('search') }}">Search Again</a></li>
+        <li class="center"><a class="searchbutton" href="{{ url_for('regsearch') }}">Search Again</a></li>
       </div>
         
     </main>

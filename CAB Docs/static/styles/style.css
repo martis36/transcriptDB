@@ -33,7 +33,7 @@ nav ul li {
     font-size: 1rem;
     display: inline-block;
     position: relative;
-    padding: 1rem 2.0rem;
+    padding: 1rem 1.95rem;
 }
 
 /* when you hover over navigation and dropdown menus*/
@@ -61,12 +61,42 @@ h1 {
     text-align: center;
 }
 
+/* general text styling */
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    color: #8d021f;
+    text-align: center;
+}
+
+
 /*dimensions of all plain text*/
 p {
     font-family: 'Open Sans', sans-serif;
     color: black;
     font-size: 1.125rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+}
+
+p2 {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+}
+
+p3 {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    font-size: .9rem;
+    margin-bottom: 1rem;
     margin-left: 2rem;
     margin-right: 2rem;
 
@@ -75,10 +105,11 @@ p {
 /*entire background of page*/
 body {
     background-color: #fff;
-    color: #000;
+    color: black;
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
 }
+
 
 /*display of all links*/
 a {
@@ -101,6 +132,52 @@ a:hover {
 
 /*change color when hovering over link with "center" class*/
 .center a:hover {
+    color: white;
+    background-color: black;
+}
+
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+/*display of "right" class*/
+.right {
+    display: flex;
+    justify-content: right;
+    margin-right: 11.5%;
+}
+
+/*change color when hovering over link with "center" class*/
+.right a:hover {
+    color: white;
+    background-color: black;
+}
+
+/*display of "rigth2" class*/
+.right2 {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-right: 40px
+}
+
+/*change color when hovering over link with "center" class*/
+.right2 a:hover {
+    color: white;
+    background-color: black;
+}
+
+/*display of "right" class*/
+.right3 {
+    display: flex;
+    justify-content: right;
+}
+
+/*change color when hovering over link with "center" class*/
+.right3 a:hover {
     color: white;
     background-color: black;
 }
@@ -155,10 +232,8 @@ a:hover {
     right: 0;
 }
 
-
-
-/*tran button is for the buttons that link to the transcript pages*/
-.tranbutton {
+/*styling of buttons that link to the transcript pages*/
+.vbutton {
     font-family: 'Open Sans', sans-serif;
     font: bold;
     border-radius: 4px;
@@ -167,14 +242,13 @@ a:hover {
     color: #FFFFFF;
     text-align: center;
     font-size: 28px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px;
 }
 
-.tranbutton span {
+.vbutton span {
     font-family: 'Open Sans', sans-serif;
     font: bold;
     cursor: pointer;
@@ -183,7 +257,7 @@ a:hover {
     transition: 0.5s;
 }
 
-.tranbutton span:after {
+.vbutton span:after {
     font-family: 'Open Sans', sans-serif;
     font: bold;
     content: '\00bb';
@@ -194,13 +268,62 @@ a:hover {
     transition: 0.5s;
 }
 
-.tranbutton:hover span {
+.vbutton:hover span {
     font-family: 'Open Sans', sans-serif;
     font: bold;
     padding-right: 25px;
 }
 
-.tranbutton:hover span:after {
+.vbutton:hover span:after {
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    opacity: 1;
+    right: 0;
+}
+
+/*styling of buttons that links to the comment page*/
+.cbutton {
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    border-radius: 4px;
+    background-color: #8d021f;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 3px;
+}
+
+.cbutton span {
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.cbutton span:after {
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.vbutton:hover span {
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    padding-right: 25px;
+}
+
+.cbutton:hover span:after {
     font-family: 'Open Sans', sans-serif;
     font: bold;
     opacity: 1;
@@ -219,8 +342,40 @@ a:hover {
     max-width: 80%;
 }
 
+.signinform{
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: black;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: auto;
+    justify-content: space-between;
+    max-width: 70%;
+}
+
+
 /*position of all form input*/
 input[type=text],
+select,
+textarea {
+    width: 90%;
+    padding: 0.75rem;
+    border: 0.05rem solid #ccc;
+    border-radius: 0.5rem;
+    resize: vertical;
+}
+
+input[type=admin],
+select,
+textarea {
+    width: 22%;
+    padding: 0.45rem;
+    border: 0.05rem solid #ccc;
+    border-radius: 0.5rem;
+    resize: vertical;
+}
+
+input[type=password],
 select,
 textarea {
     width: 90%;
@@ -238,6 +393,33 @@ label {
     display: inline-block;
 }
 
+/*position of lables on radio buttons*/
+label2 {
+    margin-bottom: .75rem;
+    margin-right: 1rem;
+    padding: inherit;
+    display: inline-block;
+}
+
+label3 {
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    padding: inherit;
+    display: inline-block;
+}
+
+label4 {
+    margin-bottom: 1.25rem;
+    margin-left: -13.5rem;
+    padding: inherit;
+    display: inline-block;
+}
+
+label5 {
+    display: inline-block;
+    margin-right: 1rem;f
+}
+
 /*position of submit button*/
 input[type=submit] {
     background-color: #8d021f;
@@ -250,6 +432,7 @@ input[type=submit] {
     font-size: 1.1rem;
     margin-top: 1rem;
     margin-right: 12.5%;
+    
 }
 
 /*change color of submit button when you hover over it*/
@@ -276,6 +459,53 @@ input[type=reset]:hover {
     background-color: black;
 }
 
+button[type=like] {
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    border-radius: 4px;
+    background-color: #8d021f;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 10px;
+    position: absolute;
+    right: 0
+    
+}
+button[type=like]:hover{
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    opacity: 1;
+    right: 0;
+}
+
+button[type=view] {
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    border-radius: 4px;
+    background-color: #8d021f;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    
+}
+button[type=view]:hover{
+    font-family: 'Open Sans', sans-serif;
+    font: bold;
+    opacity: 1;
+    padding-right: 25px;
+}
+
 /*position of form names on suggestion form*/
 .form_names {
     float: none;
@@ -292,11 +522,34 @@ input[type=reset]:hover {
     margin-left: 7rem;
 }
 
+/*position of search form boxes*/
+.form_names3 {
+    width: 50%;
+    padding-bottom: 1rem;
+    margin-top: -1rem;
+    margin-left: 0rem;
+}
+
+/*position of suggestion form boxes*/
+.form_names4 {
+    width: 65%;
+    padding-bottom: 0rem;
+    margin-top: -1rem;
+    margin-left: 7rem;
+}
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.raw {
+    content: "";
+    display: table;
+    clear: both;
+    margin-left: 40px;
 }
 
 form {
@@ -305,6 +558,14 @@ form {
 
 div {
     margin: 1% 0;
+}
+
+div2 {
+    margin: 1% 5%;
+}
+
+div3{
+    margin: 1% 10%;
 }
 
 /*Adding some style to table*/
@@ -321,3 +582,54 @@ td {
     padding: 8px 8px;
     border: 1px solid black;
 }
+
+ /* Dropdown Button */
+.dropbtn: {
+  border: none;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  color: white;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  font-family: 'Open Sans', sans-serif;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+   background-color: white;
+   color: black;
+} 

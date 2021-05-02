@@ -1,0 +1,188 @@
+<!--Admin user page-->
+<!--implemented by Summer Martin-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+
+    <!--url for static references the location of the static directory-->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <!--gets the website title image-->
+        <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
+
+        <!--navigation bar setup-->
+        <nav>
+            <ul>
+            <!--header and navegation bar with drop down search feature-->
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <div class="dropdown">
+                    <li class="dropbtn">Search</li>
+                    <div class="dropdown-content">
+                        <a href="{{ url_for('regsearch') }}">Search</a>
+                        <a href="{{ url_for('search') }}">Advanced Search</a>
+                        <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
+                    </div>
+                </div>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
+                <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+                <li><a href="{{ url_for('signin') }}">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <form action="/adminpg" method="POST">
+            <!--To search/ view tables: no restrictoins--> 
+            <div class="row">
+                <input type="radio" id="see" name="querytype" value="see" checked>
+                <label2 for="see">VIEW TABLE:   </label2>
+                <input type='admin' id='n0' name='xn0' placeholder="File Name">
+            </div>
+            
+             <!---->  
+              
+            <!--insert into database--> 
+            <div>
+                <input type="radio" id="insert" name="querytype" value="insert">
+                <label2 for="insert">INSERT:</label2>
+            </div>
+                <!--insert file--> 
+                <div2 class="row">
+                    <input type="radio" id="newfile" name="intype" value="newfile">
+                    <label5 for="newfile">File</label5>
+                    <div class="raw">
+                    <input type='admin' id='n1' name='xn1' placeholder="File Name">
+                    <input type='admin' id='l1' name='xl1' placeholder="Audio File Link">
+                    <input type='admin' id='l2' name='xl2' placeholder="Transcript Link">
+                    <input type='admin' id='da' name='xda' placeholder="Date Originated">
+                    </div>
+                </div2><div></div>
+                <!--insert new tag--> 
+                <div2 class="row">
+                    <input type="radio" id="newtag" name="intype" value="newtag">
+                    <label5 for="newtag">Tag</label5>
+                    <input type='admin' id='t1' name='xt1' placeholder="Tag Name">
+                </div2>
+                <div></div>
+                <!--insert new user--> 
+                <div2 class="row">
+                    <input type="radio" id="newuser" name="intype" value="newuser">
+                    <label5 for="newuser">User</label5>
+                    <input type='admin' id='p1' name='xp1' placeholder="Password">
+                    <input type='admin' id='ty1' name='xty1' placeholder="User Type">
+                    <input type='admin' id='u1' name='xu1' placeholder="Your User ID">
+                </div2> <div></div>
+                <!--insert new file-tag pair--> 
+                <div2 class="row">
+                    <input type="radio"  id="newpair" name="intype" value="newpair">
+                    <label5 for="newpair">Assign Tag to File</label5>
+                    <input type='admin' id='n2' name='xn2' placeholder="File Name">
+                    <input type='admin' id='t2' name='xt2' placeholder="Tag Name">
+                </div2>
+                
+            <!---->
+            
+            <!--update in database--> 
+            <div>
+                <input type="radio" id="update" name="querytype" value="update">
+                <label2 for="update">Update Value:</label2>
+            </div>
+                <!--update a user value--> 
+                <div2>
+                    <input type="radio"  id="changeu" name="tabtype" value="changeu">
+                    <label5 for="changeu">Users</label5>
+                    <input type='admin' id='u3' name='xu3' placeholder="User ID">
+                </div2><div></div>
+                    <div3>
+                        <input type="radio"  id="changeup" name="utype" value="changeup">
+                        <label5 for="changeup">User Password</label5>
+                        <input type='admin' id='u4' name='xu4' placeholder="New Password">
+                    </div3><div></div>
+                    <div3>
+                        <input type="radio"  id="changety" name="utype" value="changety">
+                        <label5 for="changety">User Type</label5>
+                        <input type='admin' id='u5' name='xu5' placeholder="New Type Value">
+                    </div3><div></div>
+                  
+                <!--update an audio file--> 
+                <div2>
+                    <input type="radio"  id="changeaf" name="tabtype" value="changeaf">
+                    <label5 for="changeaf">Audio File</label5>
+                    <input type='admin' id='n4' name='xn4' placeholder="File Name">
+                </div2><div></div>
+                    <div3>
+                        <input type="radio"  id="changefn" name="ftype" value="changefn">
+                        <label5 for="changefn">File Name</label5>
+                        <input type='admin' id='f5' name='xf5' placeholder="New Name">
+                    </div3><div></div>
+                    <div3>
+                        <input type="radio"  id="changeal" name="ftype" value="changeal">
+                        <label5 for="changeal">Audio Link</label5>
+                        <input type='admin' id='a1' name='xa1' placeholder="New Link">
+                    </div3><div></div>
+                    <div3>
+                        <input type="radio"  id="changetl" name="ftype" value="changetl">
+                        <label5 for="changetl">Transcript Link</label5>
+                        <input type='admin' id='a2' name='xa2' placeholder="New Link">
+                    </div3><div></div>
+                    <div3>
+                        <input type="radio"  id="changeda" name="ftype" value="changeda">
+                        <label5 for="changeda">Date Originated</label5>
+                        <input type='admin' id='da2' name='xda2' placeholder="New Date">
+                    </div3><div></div>
+            
+            <!---->
+            
+            <!--delete from the databse--> 
+            <div>
+                <input type="radio" id="remove" name="querytype" value="remove">
+                <label2 for="remove">Delete:</label2>
+            </div>
+                <!--delete a file--> 
+                <div2 class="row">
+                    <input type="radio"  id="rmfile" name="deltype" value="rmfile">
+                    <label5 for="rmfile">Delete File</label5>
+                    <input type='admin' id='n3' name='xn3' placeholder="File Name">
+                </div2><div></div>
+                <!--delete a comment--> 
+                <div2 class="row">
+                    <input type="radio"  id="rmcomment" name="deltype" value="rmcomment">
+                    <label5 for="rmcomment">Delete Comment</label5>
+                    <input type='admin' id='c1' name='xc1' placeholder="Comment ID">
+                </div2><div></div>
+                <!--delete a suggestion--> 
+                <div2 class="row">
+                    <input type="radio"  id="rmsug" name="deltype" value="rmsug">
+                    <label5 for="rmsug">Delete Suggestion</label5>
+                    <input type='admin' id='s1' name='xs1' placeholder="Suggestion ID">
+                </div2><div></div>
+                <div2 class="row">
+                    <input type="radio"  id="rmtag" name="deltype" value="rmtag">
+                    <label5 for="rmtag">Delete Tag</label5>
+                    <input type='admin' id='t3' name='xt3' placeholder="Tag">
+                </div2><div></div>
+                <!--delete a user--> 
+                <div2 class="row">
+                    <input type="radio"  id="rmuser" name="deltype" value="rmuser">
+                    <label5 for="rmuser">Delete User</label5>
+                    <input type='admin' id='u2' name='xu2' placeholder="User ID">
+                </div2>
+             <div class="row">
+                <input type="Submit" value="Submit">
+            </div>
+        </form>
+    </main>
+</body>
+</html>

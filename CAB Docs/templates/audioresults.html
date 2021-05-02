@@ -7,25 +7,34 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
-    <!-- <link rel="icon" href="tab_image.jpeg">-->
+    <title>Results</title>
+
+    <!--url for static references the location of the static directory-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!--link javascript file-->
-    <script src="script.js"></script>
     <header>
+    <!--gets the website title image-->
         <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
         <nav>
             <ul>
+            <!--header and navegation bar with drop down search feature-->
                 <li><a href="{{ url_for('index') }}">Home</a></li>
-                <li><a href="{{ url_for('search') }}">Search Transcripts</a></li>
+                <div class="dropdown">
+                        <li class="dropbtn">Search</li>
+                        <div class="dropdown-content">
+                            <a href="{{ url_for('regsearch') }}">Search</a>
+                            <a href="{{ url_for('search') }}">Advanced Search</a>
+                            <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
+                        </div>
+                    </div>
                 <li><a href="{{ url_for('about') }}">About Us</a></li>
                 <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
                 <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
+                <li><a href="{{ url_for('signin') }}">Sign In</a></li>
             </ul>
         </nav>
     </header>
@@ -44,7 +53,11 @@
         </table>
 
         <div class="center">
-            <li class="center"><a class="searchbutton" href="{{ url_for('transcripts') }}">View Transcripts</a></li>
+            <li class="center"><a class="vbutton" href="{{ url_for('transcripts') }}">View Transcripts</a></li>
+        </div>
+        
+        <div class="center">
+            <li class="center"><a class="searchbutton" href="{{ url_for('regsearch') }}">Back to Search</a></li>
         </div>
 
     </main>

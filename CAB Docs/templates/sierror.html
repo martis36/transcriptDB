@@ -1,5 +1,5 @@
-<!--home page-->
-<!--implementation by Kyla Ramos and Lalima Bhola with additions made by Summer Martin-->
+<!--sign in errors page-->
+<!--implementation by Summer Martin-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trentoniana Transcripts</title>
+    <title>ERROR</title>
 
     <!--url for static references the location of the static directory-->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css') }}">
@@ -22,13 +22,10 @@
         <header>
         <!--gets the website title image-->
             <a href="{{ url_for('index') }}"><img class="logo" src=static/img/logo2.png alt="website logo"></a>
-
-            <!--navigation bar setup-->
             <nav>
                 <ul>
-                    <!--header and navegation bar with drop down search feature-->
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    
+                <!--header and navegation bar with drop down search feature-->
+                    <li><a href="{{ url_for('index') }}">Home</a></li>                    
                     <div class="dropdown">
                         <li class="dropbtn">Search</li>
                         <div class="dropdown-content">
@@ -37,7 +34,6 @@
                             <a href="{{ url_for('transcripts') }}" >View all Transcripts </a>
                         </div>
                     </div>
-                    
                     <li><a href="{{ url_for('about') }}">About Us</a></li>
                     <li><a href="{{ url_for('suggest') }}">Suggestions</a></li>
                     <li><a href="https://trentonlib.org/trentoniana/" target="_blank">Trentoniana Homepage</a></li>
@@ -45,19 +41,16 @@
                 </ul>
             </nav>
         </header>
-
-        <h1>Welcome to Trentoniana Transcripts!</h1>
-
-        <p>The Trentoniana Department holds hundreds of oral histories recorded on obsolete media. They include interviews conducted by the Jewish Historical Society, for the Bicentennial Project, and of Roebling employees for the film “Now You’re Set For Life.” On this website, we are hosting a database that allows you to search for any oral history and transcript necessary. Get ready to start searching!
-        </p>
-
-        <!--using javascript to link button to search.html -->
-        <div class="center">
-            <li class="center"><a class="searchbutton" href="{{ url_for('regsearch') }}">Search</a></li>
-        </div>
+        <h1>This is an invalid login.</h1>
         
-        <img class="centerimg" src=static/img/logo.png alt="pic">
-
+        <p> You have either entered an incorrect user ID, password or you may not be a register user. You may try logging in again. </p>
+        <p> If you are not a registered user please try our other features.</p>
+        <p> If you feel there is an error or you have forgotten your password. Please contact us using the suggestion page and we will get back to you as soon as possible. </p>
+        
+      <div class="center">
+        <li class="center"><a class="searchbutton" href="{{ url_for('signin') }}">Sign In</a></li>
+      </div>
+        
     </main>
 </body>
 
