@@ -46,12 +46,17 @@ This is a script that completes the tasks of creating tables, as well as populat
 To run and access the web interface, run the following commands
 -		sudo apt update
 - 		sudo apt install python3-pip
--	install pyscopg2
+- install pyscopg2
 - 		pip3 install psycopg2-binary
 - install flask
 - 		pip3 install flask
 
 - logout, then login again to inherit new shell environment
+
+To open the user interface run the following commands
+
+- 		chmod +x run-web.sh
+- 		./run-web.sh
 
 - then browse to http://127.0.0.1:5000/
 
@@ -67,4 +72,4 @@ to drop the entire database.
 Wip
 
 ### Credits
-Authored by Aly Maahs, Jared Schmidt, Kyla Ramos, Lalima Bhola, Summer Martin
+Authored by Aly Maahs, Jared Schmidt, Summer Martin, Kyla Ramos, Lalima Bhola
