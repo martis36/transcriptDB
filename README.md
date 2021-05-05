@@ -2,7 +2,7 @@
 
 CSC 315-01 - Database Systems  
 Group 3  
-Aly Maahs, Jared Schmidt, Kyla Ramos, Lalima Bhola, Summer Martin  
+Aly Maahs, [Jared Schmidt](https://github.com/schmij12), [Summer Martin](https://github.com/martis36), [Kyla Ramos](https://github.com/kyla0509), [Lalima Bhola](https://github.com/lalimabhola)   
 Spring 2021
 
 ![TrentonianaTranscripts Logo](https://raw.githubusercontent.com/TCNJ-degoodj/stage-v-group-3/main/Code/static/img/logo2.png?token=ANWWE2OPVOLY2XR255MW5MDATBK2Q)
@@ -66,6 +66,8 @@ in your psql database to drop all the views and tables. Enter
 to exit your database and enter  
 `dropdb TrentonianaDB`  
 to drop the entire database.
+
+![UIhomePage](https://github.com/TCNJ-degoodj/stage-v-group-3/blob/main/Code/static/img/homepage.png)
 
 ### Usage
 Use the navigation menu on the website to access our different pages.  
