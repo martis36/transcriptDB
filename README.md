@@ -2,11 +2,7 @@
 
 CSC 315-01 - Database Systems  
 Group 3  
-<<<<<<< HEAD
 Aly Maahs, [Jared Schmidt](https://github.com/schmij12), [Summer Martin](https://github.com/martis36), [Kyla Ramos](https://github.com/kyla0509), [Lalima Bhola](https://github.com/lalimabhola)   
-=======
-Aly Maahs, [Jared Schmidt](https://github.com/schmij12), [Summer Martin](https://github.com/martis36), [Kyla Ramos](https://github.com/kyla0509), [Lalima Bhola](https://github.com/lalimabhola)    
->>>>>>> 04469f311fcf573b93f10f4c3d97d19ff26957bb
 Spring 2021
 
 ![TrentonianaTranscripts Logo](https://raw.githubusercontent.com/TCNJ-degoodj/stage-v-group-3/main/Code/static/img/logo2.png?token=ANWWE2OPVOLY2XR255MW5MDATBK2Q)
